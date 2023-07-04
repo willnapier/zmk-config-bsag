@@ -146,13 +146,6 @@ ZMK_BEHAVIOR(smrt_layer, hold_tap,
     bindings = <&mo>, <&sl>; 
 ) 
 
-// smart-mouse, requires PR #1366
-ZMK_BEHAVIOR(smart_mouse, tri_state,
-    bindings = <&tog MOUSE>, <&none>, <&tog MOUSE>;
-    ignored-key-positions = <LT1 LT3 RT1 RT2 RT3 RM1 RM2 RM3 RH0 RH1>;
-    ignored-layers = <MOUSE>;
-)
-
 /* Custom behaviors */
 
 // Cmd+Tab swapper, requires PR #1366
