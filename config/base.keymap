@@ -154,13 +154,6 @@ ZMK_BEHAVIOR(swapper, tri_state,
     ignored-key-positions = <LM1>;  // shift-cmd-tab
 )
 
-// Sticky layer + sticky shift (workaround for issue #1421)
-ZMK_BEHAVIOR(sls, sticky_key,
-    release-after-ms = <1000>;
-    bindings = <&uc_shift>;
-    ignore-modifiers;
-)
-
 // tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
 ZMK_BEHAVIOR(comma_morph, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
