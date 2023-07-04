@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/dynamic-macros.h>
 
 #include "../zmk-nodefree-config/helper.h"
 
@@ -203,35 +202,18 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
 )
 
 // tap: space | shift + tap: dot -> space -> sticky shift
-// ZMK_BEHAVIOR(spc_morph, mod_morph,
-//     bindings = <&kp SPACE>, <&dot_spc>;
-//     mods = <(MOD_LSFT|MOD_RSFT)>;
-// )
-// ZMK_BEHAVIOR(dot_spc, macro,
-//     wait-ms = <5>;
-//     tap-ms = <5>;
-//     bindings = <&dot_morph_cancel &kp SPACE &sk LSFT>;
-// )
-// ZMK_BEHAVIOR(dot_morph_cancel, mod_morph,
-//     bindings = <&kp DOT>, <&kp DOT>;
-//     mods = <(MOD_LSFT|MOD_RSFT)>;
-// )
-
-// tap: space | shift + tap: dot -> space -> sticky shift | hold: activate layer
-ZMK_BEHAVIOR(lt_spc, hold_tap,
-    flavor = "balanced";
-    tapping-term-ms = <200>;
-    quick-tap-ms = <QUICK_TAP_MS>;
-    bindings = <&mo>, <&spc_morph>;
-)
 ZMK_BEHAVIOR(spc_morph, mod_morph,
     bindings = <&kp SPACE>, <&dot_spc>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 ZMK_BEHAVIOR(dot_spc, macro,
-    wait-ms = <0>;
+    wait-ms = <5>;
     tap-ms = <5>;
-    bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+    bindings = <&dot_morph_cancel &kp SPACE &sk LSFT>;
+)
+ZMK_BEHAVIOR(dot_morph_cancel, mod_morph,
+    bindings = <&kp DOT>, <&kp DOT>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
 // tap: backspace | lshft + tap: delete | rshft + tap: shift-delete
@@ -273,7 +255,7 @@ ZMK_CONDITIONAL_LAYER(NUM SYM, UTIL)  // NUM + SYM --> UTIL
             &kp Q        &kp W        &kp F        &kp P        &kp B             &kp J       &kp L         &kp U         &kp Y         &kp APOS 
             &hml LCTL A  &hml LALT R  &hml LGUI S  &hml LSFT T  &kp G             &kp M       &hmr RSFT N   &hmr RGUI E   &hmr LALT I   &hmr RCTL O
       PTAB  &kp Z        &kp X        &kp C        &kp D        &kp V             &kp K       &kp H         &comma_morph  &dot_morph    &qexcl       NTAB
-                                      BACK         SMART_NUM    &smart_shft       &lt_spc FUN 0  SMART_SYM     FWD
+                                      BACK         SMART_NUM    &smart_shft       &spc_morph  SMART_SYM     FWD
             >;
         };
         num_layer {
@@ -295,10 +277,10 @@ ZMK_CONDITIONAL_LAYER(NUM SYM, UTIL)  // NUM + SYM --> UTIL
  
         util_layer {
             bindings = <
-            &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR  &dyn_macro RECORD        &kp HOME     &kp PG_UP  &kp UP    &kp PG_DN  &kp END
-            &sk LCTL     &sk LALT     &sk LGUI     &sk LSFT    &dyn_macro PLAY          XXX          &kp LEFT   &kp DOWN  &kp RIGHT  &kp ENTER 
-        ___ S_UNDO       S_CUT        S_COPY       S_PASTE     S_REDO                   &key_repeat  &kp BSPC   &kp DEL   &kp TAB    &kp ESC   ___
-                                       ___          ___         ___                      ___          ___        ___
+            &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR  ___          &kp HOME     &kp PG_UP  &kp UP    &kp PG_DN  &kp END
+            &sk LCTL     &sk LALT     &sk LGUI     &sk LSFT    ___          XXX          &kp LEFT   &kp DOWN  &kp RIGHT  &kp ENTER 
+        ___ S_UNDO       S_CUT        S_COPY       S_PASTE     S_REDO       &key_repeat  &kp BSPC   &kp DEL   &kp TAB    &kp ESC   ___
+                                       ___          ___         ___         ___          ___        ___
             >;
         };
 
