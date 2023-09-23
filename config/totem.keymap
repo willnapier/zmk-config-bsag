@@ -67,6 +67,16 @@
             key-positions = <13 16>;
             bindings = <&caps_word>;
         };
+        combo_lparen {
+            timeout-ms = <50>;
+            key-positions = <3 13>;
+            bindings = <&kp LPAR>;
+        };
+        combo_rparen {
+            timeout-ms = <50>;
+            key-positions = <6 16>;
+            bindings = <&kp RPAR>;
+        };
     };
 
     macros {
@@ -103,7 +113,7 @@ label= "BASE"                              ;
 bindings = <
                 &kp Q        &kp W        &kp F           &kp P           &kp B              &kp J         &kp L             &kp U           &kp Y         &kp APOS 
                 &mt LCTL A   &mt LALT R   &mt LGUI S      &mt LSFT T      &kp G              &kp M         &mt RSFT N        &mt RGUI E      &mt LALT I    &mt RCTL O
-    PTAB        &kp Z        &kp X        &kp C           &kp D           &kp V              &kp K         &kp H             &kp COMMA       &kp DOT       &kp FSLH        NTAB
+    PTAB        &kp Z        &kp X        &kp C           &mt HYP D       &kp V              &kp K         &mt HYP H         &kp COMMA       &kp DOT       &kp FSLH        NTAB
                                           &lt UTIL ESC    &lt NAV SPACE   &kp TAB            &lt SYM RET   &lt NUM BSPC      &lt FUN DEL
             >;
                 };
@@ -127,7 +137,7 @@ label= "NAV"                              ;
 bindings = <
             ___          ___          ___             ___             ___                ___           &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
             &kp LCTL     &kp LALT     &kp LGUI        &kp LSFT        ___                &caps_word    &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
-    ___     ___          ___          ___             ___             ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          ___
+    BACK    ___          ___          ___             &kp HYP         ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          FWD
                                       ___             ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
                 };
@@ -151,7 +161,7 @@ label= "NUM"                               ;
 bindings = <
             &kp LBKT     &kp N7       &kp N8          &kp  N9         &kp RBKT           ___           ___               ___             ___           ___ 
             &kp SEMI     &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
-    ___     &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           ___               ___             ___           ___             ___
+    ___     &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           &kp HYP           ___           ___             ___
                                       &kp DOT         &kp  N0         &kp MINUS          ___           ___               ___
             >;
                 };
@@ -175,7 +185,7 @@ label= "SYM"                               ;
 bindings = <
             &kp LBRC     &kp AMPS     &kp STAR        &kp LPAR        &kp RBRC           ___           ___               ___             ___           ___
             &kp COLON    &kp DOLLAR   &kp PERCENT     &kp CARET       &kp PLUS           ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
-    ___     &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           ___               ___             ___           ___             ___
+    ___     &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           &kp HYP           ___           ___             ___
                                       &kp LPAR        &kp RPAR        &kp UNDER          ___           ___               ___                   
             >;
                 };
@@ -199,7 +209,7 @@ label= "FUN"                             ;
 bindings = <
             &kp F12      &kp F7       &kp F8          &kp F9          ___        ___           ___               ___             ___           ___
             &kp F11      &kp F4       &kp F5          &kp F6          ___        ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
-    ___     &kp F10      &kp F1       &kp F2          &kp F3          ___        ___           ___               ___             ___           ___             ___
+    ___     &kp F10      &kp F1       &kp F2          &kp F3          ___        ___           &kp HYP           ___           ___             ___
                                       ___             ___             ___        ___           ___               ___
             >;
                 };
