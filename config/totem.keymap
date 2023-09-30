@@ -32,8 +32,8 @@
 #define NTAB &kp LS(LG(RBKT))
 
 // hyper and meh keys
-#define HYP LS(LC(LA(LG)))
-#define MEH LS(LC(LA))
+#define HYP &kp LS(LC(LA(LG)))
+#define MEH &kp LS(LC(LA))
 
 
 /* ------------------------ general config ----------------------- */
@@ -100,7 +100,7 @@
             bindings = <
             ___          ___          ___             ___             ___                &kp CAPS      &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
             &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT       ___                S_SAVE        &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
-    BACK    ___          ___          ___             &kp HYP         ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          FWD
+    BACK    ___          ___          ___             HYP         ___                    S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          FWD
                                       ___             ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
         }; 
@@ -108,7 +108,7 @@
             bindings = <
             &kp LBKT     &kp N7       &kp N8          &kp  N9         &kp RBKT           ___           ___               ___             ___           ___ 
             &kp SEMI     &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
-    &kp LT  &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           &kp HYP           ___             ___           ___             &kp GT
+    &kp LT  &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           HYP               ___             ___           ___             &kp GT
                                       &kp DOT         &kp  N0         &kp MINUS          ___           ___               ___
             >;
         };
@@ -116,7 +116,7 @@
             bindings = <
             &kp LBRC     &kp AMPS     &kp STAR        &kp LPAR        &kp RBRC           ___           ___               ___             ___           ___
             &kp COLON    &kp DOLLAR   &kp PERCENT     &kp CARET       &kp PLUS           ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
-    &kp LT  &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           &kp HYP           ___             ___           ___             &kp GT
+    &kp LT  &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           HYP               ___             ___           ___             &kp GT
                                       &kp LPAR        &kp RPAR        &kp UNDER          ___           ___               ___                   
             >;
         };
@@ -124,7 +124,7 @@
             bindings = <
             &kp F12      &kp F7       &kp F8          &kp F9          ___                ___           ___               ___             ___           ___
             &kp F11      &kp F4       &kp F5          &kp F6          ___                ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
-    ___     &kp F10      &kp F1       &kp F2          &kp F3          ___                ___           &kp HYP           ___             ___           ___             ___
+    ___     &kp F10      &kp F1       &kp F2          &kp F3          ___                ___           HYP               ___             ___           ___             ___
                                       &kp ESC         &kp SPACE       &kp TAB            ___           ___               ___
             >;
         };
@@ -132,7 +132,7 @@
             bindings = <
             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_CLR      ___                ___           ___               &kp C_VOL_UP    ___           ___
             &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT      ___                ___           ___                &kp C_VOL_DN    ___           ___ 
-    ___     ___          ___          ___             &kp HYP         ___                ___           ___               ___             ___           ___             ___
+    ___     ___          ___          ___             HYP             ___                ___           ___               ___             ___           ___             ___
                                       ___             ___             ___                ___           ___               &kp C_MUTE
             >;
         };  
