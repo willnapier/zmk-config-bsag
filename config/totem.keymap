@@ -69,12 +69,12 @@
         };
         combo_lparen {
             timeout-ms = <50>;
-            key-positions = <3 13>;
+            key-positions = <12 23>;
             bindings = <&kp LPAR>;
         };
         combo_rparen {
             timeout-ms = <50>;
-            key-positions = <6 16>;
+            key-positions = <17 28>;
             bindings = <&kp RPAR>;
         };
     };
@@ -160,7 +160,7 @@ label= "NUM"                               ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 bindings = <
             &kp LBKT     &kp N7       &kp N8          &kp  N9         &kp RBKT           ___           ___               ___             ___           ___ 
-            &kp SEMI     &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
+            &kp SEMI     &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTL
     ___     &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           &kp HYP           ___             ___           ___             ___
                                       &kp DOT         &kp  N0         &kp MINUS          ___           ___               ___
             >;
@@ -184,7 +184,7 @@ label= "SYM"                               ;
 //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 bindings = <
             &kp LBRC     &kp AMPS     &kp STAR        &kp LPAR        &kp RBRC           ___           ___               ___             ___           ___
-            &kp COLON    &kp DOLLAR   &kp PERCENT     &kp CARET       &kp PLUS           ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
+            &kp COLON    &kp DOLLAR   &kp PERCENT     &kp CARET       &kp PLUS           ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTL 
     ___     &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           &kp HYP           ___           ___             ___             ___
                                       &kp LPAR        &kp RPAR        &kp UNDER          ___           ___               ___                   
             >;
