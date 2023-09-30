@@ -23,10 +23,11 @@
 #define S_COPY &kp LG(C)
 #define S_PASTE &kp LG(V)
 #define S_REDO &kp LS(LG(Z))
+#define S_SAVE &kp LG(S)
 
 // navigation bindings for back/forward and prev tab/next tab
-//#define BACK &kp LG(LBKT)
-//#define FWD &kp LG(RBKT)
+#define BACK &kp LG(LBKT)
+#define FWD &kp LG(RBKT)
 #define PTAB &kp LS(LG(LBKT))
 #define NTAB &kp LS(LG(RBKT))
 
@@ -54,25 +55,6 @@
     tapping-term-ms = <200>;
 };
 
-/* ------------------------------ home row mods ----------------------------- */
-// #define KEYS_L LT0 LT1 LT2 LT3 LT4 LM0 LM1 LM2 LM3 LM4 LB0 LB1 LB2 LB3 LB4 LH4 // left hand
-// #define KEYS_R RT0 RT1 RT2 RT3 RT4 RM0 RM1 RM2 RM3 RM4 RB0 RB1 RB2 RB3 RB4 RH4 // right hand
-// #define THUMBS LH2 LH1 LH0 RH0 RH1 RH2                             // thumbs
-
-// // 280, 150
-// #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS, EXTRA) \
-//     ZMK_BEHAVIOR(NAME, hold_tap, \
-//         flavor = "hold-preferred"; \
-//         tapping-term-ms = <400>; \
-//         quick-tap-ms = <200>; \
-//         bindings = <HOLD>, <TAP>; \
-//         hold-trigger-key-positions = <TRIGGER_POS>; \
-//         hold-trigger-on-release; \
-//         EXTRA \
-//     )
-// MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS, hold-while-undecided;)  // left-hand HRMs
-// MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS, hold-while-undecided;)  // right-hand HRMs
-
 / {
     behaviors {
         hm: homerow_mods {
@@ -92,6 +74,16 @@
             key-positions = <13 16>;
             bindings = <&caps_word>;
         };
+        combo_lparen {
+            timeout-ms = <50>;
+            key-positions = <12 23>;
+            bindings = <&kp LPAR>;
+        };
+        combo_rparen {
+            timeout-ms = <50>;
+            key-positions = <17 28>;
+            bindings = <&kp RPAR>;
+        };
     };
 // TODO: Add hyper key as HRM
     keymap {
@@ -100,15 +92,15 @@
             bindings = <
             &kp Q        &kp W        &kp F           &kp P           &kp B              &kp J         &kp L             &kp U           &kp Y         &kp APOS 
             &hm LCTRL A  &hm LALT R   &hm LGUI S      &hm LSHFT T     &kp G              &kp M         &hm RSHFT N       &hm RGUI E      &hm LALT I    &hm RCTRL O
-    PTAB    &kp Z        &kp X        &kp C           &kp D           &kp V              &kp K         &kp H             &kp COMMA       &kp DOT       &kp FSLH        NTAB
+    PTAB    &kp Z        &kp X        &kp C           &hm HYP D       &kp V              &kp K         &hm HYP H         &kp COMMA       &kp DOT       &kp FSLH        NTAB
                                       &lt UTIL ESC    &lt NAV SPACE   &kp TAB            &lt SYM RET   &lt NUM BSPC      &lt FUN DEL
             >;
         };
         nav_layer { 
             bindings = <
-            ___          ___          ___             ___             ___                ___           &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
-            &kp LCTRL     &kp LALT     &kp LGUI        &kp LSHFT        ___                &caps_word    &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
-    ___     ___          ___          ___             ___             ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          ___
+            ___          ___          ___             ___             ___                &kp CAPS      &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
+            &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT       ___                S_SAVE        &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
+    BACK    ___          ___          ___             &kp HYP         ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          FWD
                                       ___             ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
         }; 
@@ -116,7 +108,7 @@
             bindings = <
             &kp LBKT     &kp N7       &kp N8          &kp  N9         &kp RBKT           ___           ___               ___             ___           ___ 
             &kp SEMI     &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
-    ___     &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           ___               ___             ___           ___             ___
+    &kp LT  &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           &kp HYP           ___             ___           ___             &kp GT
                                       &kp DOT         &kp  N0         &kp MINUS          ___           ___               ___
             >;
         };
@@ -124,7 +116,7 @@
             bindings = <
             &kp LBRC     &kp AMPS     &kp STAR        &kp LPAR        &kp RBRC           ___           ___               ___             ___           ___
             &kp COLON    &kp DOLLAR   &kp PERCENT     &kp CARET       &kp PLUS           ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
-    ___     &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           ___               ___             ___           ___             ___
+    &kp LT  &kp TILDE    &kp EXCL     &kp AT          &kp HASH        &kp PIPE           ___           &kp HYP           ___             ___           ___             &kp GT
                                       &kp LPAR        &kp RPAR        &kp UNDER          ___           ___               ___                   
             >;
         };
@@ -132,15 +124,15 @@
             bindings = <
             &kp F12      &kp F7       &kp F8          &kp F9          ___                ___           ___               ___             ___           ___
             &kp F11      &kp F4       &kp F5          &kp F6          ___                ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL 
-    ___     &kp F10      &kp F1       &kp F2          &kp F3          ___                ___           ___               ___             ___           ___             ___
-                                      ___             ___             ___                ___           ___               ___
+    ___     &kp F10      &kp F1       &kp F2          &kp F3          ___                ___           &kp HYP           ___             ___           ___             ___
+                                      &kp ESC         &kp SPACE       &kp TAB            ___           ___               ___
             >;
         };
         util_layer {
             bindings = <
             &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2    &bt BT_CLR      ___                ___           ___               &kp C_VOL_UP    ___           ___
-            &kp LCTRL     &kp LALT     &kp LGUI        &kp LSHFT        ___                ___           ___               &kp C_VOL_DN    ___           ___ 
-    ___     ___          ___          ___             ___             ___                ___           ___               ___             ___           ___             ___
+            &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT      ___                ___           ___                &kp C_VOL_DN    ___           ___ 
+    ___     ___          ___          ___             &kp HYP         ___                ___           ___               ___             ___           ___             ___
                                       ___             ___             ___                ___           ___               &kp C_MUTE
             >;
         };  
