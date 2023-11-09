@@ -49,6 +49,12 @@
     usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>; // repeat all keys
 };
 
+// sticky key aka 'one-shot mods'
+&sk {
+    release-after-ms = <2000>;
+    quick-release;
+};
+
 // default layer-tap config
 &lt {  
     flavor = "tap-preferred";
@@ -77,13 +83,18 @@
         };
         combo_lparen {
             timeout-ms = <50>;
-            key-positions = <12 23>;
+            key-positions = <12 13>;
             bindings = <&kp LPAR>;
         };
         combo_rparen {
             timeout-ms = <50>;
-            key-positions = <17 28>;
+            key-positions = <16 17>;
             bindings = <&kp RPAR>;
+        };
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <11 13>;
+            bindings = <&kp ESC>;
         };
     };
 // TODO: Add hyper key as HRM
@@ -93,15 +104,15 @@
             bindings = <
             &kp Q        &kp W        &kp F           &kp P           &kp B              &kp J         &kp L             &kp U           &kp Y         &kp APOS 
             &hm LCTRL A  &hm LALT R   &hm LGUI S      &hm LSHFT T     &kp G              &kp M         &hm RSHFT N       &hm RGUI E      &hm LALT I    &hm RCTRL O
-    PTAB    &kp Z        &kp X        &kp C           &hm LS(LC(LA(LGUI))) D       &kp V              &kp K         &hm LS(LC(LA(LGUI))) H         &kp COMMA       &kp DOT       &kp FSLH        NTAB
-                                      &lt UTIL ESC    &lt NAV SPACE   &kp TAB            &lt SYM RET   &lt NUM BSPC      &lt FUN DEL
+    PTAB    &kp Z        &kp X        &kp C           &hm HYP D       &kp V              &kp K         &hm HYP H         &kp COMMA       &kp DOT       &kp FSLH        NTAB
+                                      &lt UTIL TAB    &lt NAV SPACE   &sk LSHFT          &lt SYM RET   &lt NUM BSPC      &lt FUN DEL
             >;
         };
         nav_layer { 
             bindings = <
             ___          ___          ___             ___             ___                &kp CAPS      &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
             &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT       ___                S_SAVE        &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
-    BACK    ___          ___          ___             &kp HYP         ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          FWD
+    BACK    ___          ___          &kp MEH         &kp HYP         ___                S_REDO        S_PASTE           S_COPY          S_CUT         S_UNDO          FWD
                                       ___             ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
         }; 
@@ -109,7 +120,7 @@
             bindings = <
             &kp LBKT     &kp N7       &kp N8          &kp  N9         &kp RBKT           ___           ___               ___             ___           ___ 
             &kp SEMI     &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
-    &kp LT  &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           &kp HYP           ___             ___           ___             &kp GT
+    &kp LT  &kp GRAVE    &kp N1       &kp N2          &kp  N3         &kp BSLH           ___           &kp HYP           &kp MEH         ___           ___             &kp GT
                                       &kp DOT         &kp  N0         &kp MINUS          ___           ___               ___
             >;
         };
