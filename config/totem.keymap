@@ -144,7 +144,7 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             timeout-ms = <50>;
             key-positions = <12 23>;
             bindings = <&kp BSLH>;
-        }
+        };
     };
 // TODO: Add hyper key as HRM
     keymap {
