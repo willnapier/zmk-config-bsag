@@ -85,7 +85,7 @@ MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 
 // special HRMs for the right meh key, as it involves a modmorph
-MAKE_HRM(hmr_meh, &kp, &comma_morph, KEYS_L, THUMBS)
+MAKE_HRM(hmr_meh, &kp, &comma_morph, KEYS_L THUMBS)
 // MAKE_HRM(hmr_lpar, &kp, &lpar, KEYS_L THUMBS)    // "    "   "   "
 // MAKE_HRM(hmr_rpar, &kp, &rpar, KEYS_L THUMBS)    // "    "   "   "
 
