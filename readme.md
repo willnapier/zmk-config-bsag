@@ -5,7 +5,7 @@
 <figcaption>Keyboard layout for all layers and combos</figcaption>
 </figure>
 
-This is a ZMK firmware for a [TOTEM keyboard](https://github.com/GEIGEIGEIST/TOTEM), using a keymap that is pretty much copied from both the great [Miryoku layout](https://github.com/manna-harbour/miryoku_zmk#caps-word), and [urob's ZMK config](https://github.com/urob/zmk-config/tree/main). I use the alternate hand layout of most of the layers (so that the layer key and modifiers are on one hand, and the main keys of that layout on the other), but combine that with urob's idea of having symbols as combos. I have also adopted his "Timer-less home row mods", which work really well and avoid the usual drawbacks of home row mods.
+This is a ZMK firmware for a [TOTEM keyboard](https://github.com/GEIGEIGEIST/TOTEM), using a keymap that is pretty much copied from both the great [Miryoku layout](https://github.com/manna-harbour/miryoku_zmk), and [urob's ZMK config](https://github.com/urob/zmk-config). I use the alternate hand layout of most of the layers (so that the layer key and modifiers are on one hand, and the main keys of that layout on the other), but combine that with urob's idea of having symbols as combos. I have also adopted his "Timer-less home row mods", which work really well and avoid the usual drawbacks of home row mods.
 
 Caps word is activated by tapping both home row index finger keys, and as I find it easier to have a dedicated shift key for capitalising words, I have a one-shot shift key on the inner left thumb key, and use that for capitalisation and the home row shift for keyboard shortcut combos.
 
