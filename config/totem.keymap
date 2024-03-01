@@ -118,7 +118,7 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             &kp Q         &kp W         &kp F            &kp P            &kp B              &kp J         &kp L              &kp U            &kp Y         &kp APOS 
             &hml LCTRL A  &hml LALT R   &hml LGUI S      &hml LSHFT T     &kp G              &kp M         &hmr RSHFT N       &hmr RGUI E      &hmr LALT I   &hmr RCTRL O
     PTAB    &kp Z         &kp X         &hml MEH C       &hml HYP D       &kp V              &kp K         &hmr HYP H         &hmr_meh MEH 0   &dot_morph    &qexcl        NTAB
-                                        &lt UTIL TAB     &lt NAV SPACE    &sk LSHFT          &kp RET       &lt NUM BSPC       &lt FUN DEL
+                                        &lt UTIL ESC     &lt NAV SPACE    &sk LSHFT          &kp RET       &lt NUM BSPC       &lt FUN DEL
             >;
         };
         nav_layer { 
@@ -126,7 +126,7 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             ___          ___          ___             ___             ___                ___           &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
             &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT       ___                ___           &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
     BACK    ___          ___          &kp MEH         &kp HYP         ___                ___           PWIN              ___             NWIN          ___             FWD
-                                      ___             ___             ___                &kp RET       &kp BSPC          &kp DEL
+                                      &kp TAB             ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
         }; 
         num_layer {
