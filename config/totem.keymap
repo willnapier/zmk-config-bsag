@@ -125,15 +125,15 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             bindings = <
             ___          ___          ___             ___             ___                ___           &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
             &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT       ___                ___           &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
-    BACK    ___          ___          &kp MEH         &kp HYP         ___                ___           PWIN              ___             NWIN          ___             FWD
-                                      &kp TAB             ___             ___                &kp RET       &kp BSPC          &kp DEL
+    BACK    &kp TAB       ___          &kp MEH         &kp HYP         ___                ___           PWIN              ___             NWIN          ___             FWD
+                                       ___            ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
         }; 
         num_layer {
             bindings = <
             &kp PLUS     &kp N7       &kp N8          &kp  N9         &kp STAR           ___           ___               ___             ___           ___ 
             &kp N0       &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
-  &kp LPAR  &kp MINUS    &kp N1       &kp N2          &kp  N3         &kp FSLH           ___           &kp HYP           &kp MEH         ___           ___             &kp RPAR
+  &kp LPAR  &kp MINUS    &kp N1       &kp N2          &kp  N3         &kp FSLH           ___           &kp HYP           &kp MEH         ___           &kp TAB           &kp RPAR
                                       ___             &kp  DOT        &kp COLON          ___           ___               ___
             >;
         };
