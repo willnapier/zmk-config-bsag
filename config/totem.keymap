@@ -22,10 +22,6 @@
 // navigation bindings for back/forward and prev tab/next tab
 #define BACK &kp LG(LBKT)
 #define FWD &kp LG(RBKT)
-#define PTAB &kp LS(LG(LBKT))
-#define NTAB &kp LS(LG(RBKT))
-#define PWIN &kp LS(LG(GRAVE)) // cycle backwards through windows of app
-#define NWIN &kp LG(GRAVE)     // cycle forwards through windows of app 
 
 // hyper and meh keys
 #define HYP LS(LC(LA(LGUI)))
@@ -89,24 +85,16 @@ ZMK_BEHAVIOR(qexcl, mod_morph,
     mods = <(MOD_LSFT|MOD_RSFT)>;
 )
 
-// tap: comma | shift + tap: semicolon | ctrl + shift + tap: <
+// tap: comma | shift + tap: semicolon 
 ZMK_BEHAVIOR(comma_morph, mod_morph,
+    bindings = <&kp COMMA>, <&kp SEMICOLON>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-    bindings = <&kp COMMA>, <&comma_inner_morph>;
-)
-ZMK_BEHAVIOR(comma_inner_morph, mod_morph,
-    bindings = <&kp SEMICOLON>, <&kp LESS_THAN>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
 )
 
-// tap: dot | shift + tap: colon | ctrl + shift + tap: >
+// tap: dot | shift + tap: colon 
 ZMK_BEHAVIOR(dot_morph, mod_morph,
-    bindings = <&kp DOT>, <&dot_inner_morph>;
+    bindings = <&kp DOT>, <&kp COLON>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-)
-ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
-    bindings = <&kp COLON>, <&kp GREATER_THAN>;
-    mods = <(MOD_LCTL|MOD_RCTL)>;
 )
 
 / {
@@ -117,7 +105,7 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             bindings = <
             &kp Q         &kp W         &kp F            &kp P            &kp B              &kp J         &kp L              &kp U            &kp Y         &kp APOS 
             &hml LCTRL A  &hml LALT R   &hml LGUI S      &hml LSHFT T     &kp G              &kp M         &hmr RSHFT N       &hmr RGUI E      &hmr LALT I   &hmr RCTRL O
-    PTAB    &kp Z         &kp X         &hml MEH C       &hml HYP D       &kp V              &kp K         &hmr HYP H         &hmr_meh MEH 0   &dot_morph    &qexcl        NTAB
+&kp TAB    &kp Z         &kp X         &hml MEH C       &hml HYP D       &kp V              &kp K         &hmr HYP H         &hmr_meh MEH 0   &dot_morph    &qexcl        &kp TAB
                                         &lt UTIL ESC     &lt NAV SPACE    &sk LSHFT          &kp RET       &lt NUM BSPC       &lt FUN DEL
             >;
         };
@@ -125,7 +113,7 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             bindings = <
             ___          ___          ___             ___             ___                ___           &kp HOME          &kp UP          &kp END       &kp PAGE_UP 
             &kp LCTRL     &kp LALT     &kp LGUI       &kp LSHFT       ___                ___           &kp LEFT          &kp DOWN        &kp RIGHT     &kp PAGE_DOWN
-    BACK    &kp TAB       ___          &kp MEH         &kp HYP         ___                ___           PWIN              ___             NWIN          ___             FWD
+    BACK    ___           ___          &kp MEH         &kp HYP         ___                ___          ___               ___             ___           ___             FWD
                                        ___            ___             ___                &kp RET       &kp BSPC          &kp DEL
             >;
         }; 
@@ -133,8 +121,8 @@ ZMK_BEHAVIOR(dot_inner_morph, mod_morph,
             bindings = <
             &kp PLUS     &kp N7       &kp N8          &kp  N9         &kp STAR           ___           ___               ___             ___           ___ 
             &kp N0       &kp N4       &kp N5          &kp  N6         &kp EQUAL          ___           &kp LSHFT         &kp LGUI        &kp LALT      &kp LCTRL
-  &kp LPAR  &kp MINUS    &kp N1       &kp N2          &kp  N3         &kp FSLH           ___           &kp HYP           &kp MEH         ___           &kp TAB           &kp RPAR
-                                      ___             &kp  DOT        &kp COLON          ___           ___               ___
+  &kp LPAR  &kp MINUS    &kp N1       &kp N2          &kp  N3         &kp FSLH           ___           &kp HYP           &kp MEH         ___           ___            &kp RPAR
+                                      ___             &kp  DOT        &kp SEMI           ___           ___               ___
             >;
         };
         fun_layer {
