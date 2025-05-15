@@ -1,0 +1,7 @@
+/ {
+    mouse {
+        compatible = "zmk,pointing";
+        ZMK_POINTING_DEFAULT_MOVE_VAL = <600>;
+        ZMK_POINTING_DEFAULT_SCRL_VAL = <20>;
+    };
+};
